@@ -7,7 +7,7 @@
 //   ./prog1 88> abc.txt
 //
 int main() {
-	write(1, "prog1 running\n", 14);
+	write(1, "prog2b running\n", 15);
 	
 	int nfd = dup2(1, 88);
 
@@ -20,7 +20,7 @@ int main() {
 	if (write(88, "hello, world 2\n", 15)==-1) {
 		perror("write to 88 failed");
 	} else {
-		puts("write to nfd succeded");
+		puts("write to 88 succeded");
 	}
 
 	return 0; 

@@ -1,4 +1,8 @@
+// Process initial address space defined from the executable file.
+// (Also shared objects defined as explicit dependencies.)
+
 #include <stdio.h>
+#include <unistd.h>
 
 const char cdata[3*1024*1024] = { 3 };  // .rodata
 char idata[5*1024*1024] = { 5 };        // .data
@@ -9,6 +13,7 @@ int func(int a, int b) {                // .text
 }
 
 int main() {                            // .text
+	printf(":: RUNNING %d ::\n", getpid());
    zdata[0] = 7;
 
    int cc = cdata[0];

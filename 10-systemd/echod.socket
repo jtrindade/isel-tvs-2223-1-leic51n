@@ -1,0 +1,8 @@
+[Unit]
+Description=Echo daemon activation socket
+
+[Socket]
+ListenStream=/run/isel/echod/request
+
+[Install]
+WantedBy=sockets.target

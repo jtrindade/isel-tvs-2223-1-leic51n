@@ -1,0 +1,12 @@
+[Unit]
+Description=Daemon for an echo service
+Requires=echod.socket
+
+[Service]
+ExecStart=/opt/isel/tvs/echod/bin/echod
+Restart=no
+User=root
+Group=root
+
+[Install]
+Also=echod.socket

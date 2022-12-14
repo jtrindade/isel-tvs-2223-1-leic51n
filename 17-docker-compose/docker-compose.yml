@@ -1,0 +1,32 @@
+version: "3.8"
+
+name: "tvs"
+
+services:
+  ariana:
+    image: alpine
+    tty: true
+    depends_on:
+      - demoapp
+    networks:
+      - demonet
+
+  ursula:
+    image: ubuntu-net
+    tty: true
+    depends_on:
+      - demoapp
+    networks:
+      - demonet
+
+  demoapp:
+    build: tvsapp
+    restart: "no"
+    networks:
+      - demonet
+    ports:
+      - "9876:2345"
+
+networks:
+  demonet:
+
